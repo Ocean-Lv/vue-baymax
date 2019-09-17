@@ -27,3 +27,15 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+/**
+    Plug-ins
+**/
+
+### element-ui
+```
+npm i && npm i element-ui
+https://element.eleme.cn/2.0/#/zh-CN/component/quickstart
+```
+
