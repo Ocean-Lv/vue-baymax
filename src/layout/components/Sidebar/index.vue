@@ -14,34 +14,39 @@
       @open="handleOpen"
       @close="handleClose"
     >
-      <!-- <Item :model="treeData" /> -->
+      <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
     </el-menu>
   </div>
 </template>
 
 <script>
+import SidebarItem from './SidebarItem'
 import variables from "@/styles/variables.scss";
-import tree from "@/json/treeData";
 
 export default {
   name: "",
-  components: {},
+  components: {
+    SidebarItem
+  },
   props: {},
   data() {
     return {
       isCollapse: true,
-      treeData: null
+      permission_routes: Array
+      // treeList: this.$store.state.routers
     };
   },
   watch: {},
   computed: {
     activeMenu() {
-      console.log(tree);
-      // treeData = treeData
+      this.$store.commit('SET_ROUTES')
+      this.permission_routes = this.$store.state.routers;
+      console.log(this.permission_routes);
     },
     variables() {
       return variables;
     }
+
   },
   methods: {
     handleOpen(key, keyPath) {

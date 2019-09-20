@@ -6,8 +6,10 @@ import '@/styles/index.scss' // global css
 
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import store from './store/index'
+// let store = require('@/store/index.js')
 import './registerServiceWorker'
+
 
 Vue.config.productionTip = false
 
