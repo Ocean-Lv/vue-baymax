@@ -1,7 +1,8 @@
 <template>
   <div>
     permission-icons
-    {{this.$route.path}}
+    <br />
+    this page path: {{this.$route.path}}
   </div>
 </template>
 
